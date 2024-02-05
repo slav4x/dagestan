@@ -1,0 +1,112 @@
+.about
+  background: var(--color-bg)
+  &-main
+    max-width: 1850px
+    width: calc(100% - 70px)
+    margin: 0 auto
+    position: relative
+    background: url(../img/about-bg.jpg) no-repeat center
+    color: #fff
+    padding: var(--gap) 0
+    border-radius: 35px
+    &::before, &::after
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      width: 20px
+      height: 800px
+      background: var(--color-bg)
+      border-radius: 10px
+      margin: auto 0
+    &::before
+      left: -10px
+    &::after
+      right: -10px
+  .title
+    text-align: center
+    max-width: 960px
+    margin: 0 auto
+  .subtitle
+    max-width: 820px
+    text-align: center
+    margin: 25px auto 0
+    color: #fff
+  &-list
+    background: #fff
+    color: var(--color-black)
+    border-radius: 25px
+    margin-top: 60px
+    padding: 30px 0
+    width: calc(100% + 120px)
+    margin-left: -60px
+  &-row
+    @include flexbox
+    align-items: flex-start
+    padding: 0 30px
+    border-bottom: 1px solid rgba(0,0,0,.05)
+    &:last-child
+      border: 0
+  &-group
+    padding: 30px
+    width: 25%
+    @include flexbox
+    align-items: center
+    h4
+      font-size: 18px
+      font-weight: 700
+      line-height: 1.4
+      order: -2
+    p
+      width: 100%
+      font-size: 15px
+      font-weight: 500
+      line-height: 1.4
+      color: var(--color-gray)
+      margin-top: 8px
+    span
+      order: -1
+      @include flexbox
+      align-items: center
+      gap: 6px
+      margin-left: auto
+      i
+        display: block
+        width: 16px
+        height: 16px
+        border-radius: 100%
+        background: #5891d3
+        box-shadow: inset 0 0 0 2px rgba(88, 145, 211, 0.45), inset 0 0 0 4px #fff
+        opacity: 0.35
+      @for $i from 1 through 5
+        &[data-stars="#{$i}"] i:nth-child(-n + #{$i})
+          opacity: 1
+  &-grid
+    margin-top: 575px
+    gap: 40px
+    @include flexbox
+  &-item
+    width: calc(100% / 2 - 20px)
+    padding: 45px
+    border-radius: 20px
+    background: rgba(0, 0, 0, 0.15)
+    border: 1px solid rgba(255,255,255,.15)
+    backdrop-filter: blur(72.5px)
+    position: relative
+    img
+      position: absolute
+      width: 135px
+      top: -10px
+      right: 30px
+      transform: rotate(5deg)
+    h4
+      font-size: 20px
+      font-weight: 700
+      line-height: 1.4
+      max-width: 380px
+    p
+      max-width: 340px
+      margin-top: 15px
+      line-height: 1.4
+      span
+        opacity: 0.45
