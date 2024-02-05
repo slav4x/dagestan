@@ -1,1 +1,85 @@
-
+.header
+  position: absolute
+  max-width: 1500px
+  top: 0px
+  left: 30px
+  right: 30px
+  border-radius: 15px
+  margin: 0 auto
+  color: #fff
+  z-index: 100
+  transition: .25s
+  &.fixed
+    position: fixed
+    top: 20px
+    background: #fff
+    color: var(--color-black)
+    &::before
+      display: none
+    .header-contact__call
+      border-color: var(--color-black)
+  &::before
+    content: ''
+    position: absolute
+    left: -1000px
+    right: -1000px
+    bottom: -15px
+    background: rgba(255, 255, 255, 0.25)
+    height: 1px
+    transition: .25s
+  &-top
+    @include flexbox
+    align-items: center
+    justify-content: space-between
+    padding-top: 25px
+  &-gov
+    @include flexbox
+    align-items: center
+    gap: 25px
+    width: 370px
+    img
+      width: 75px
+      height: 75px
+      border-radius: 100%
+      object-fit: cover
+      object-position: center
+    p
+      font-size: 17px
+      line-height: 1.45
+      b
+        font-weight: 700
+      a
+        color: #e7c858
+        border-bottom: 1px solid #E7C858
+  &-logo
+    display: block
+    padding: 10px
+    border-radius: 100%
+    background: rgba(255,255,255,.15)
+    border: 1px solid rgba(255,255,255,.5)
+    img
+      width: 75px
+  &-contact
+    @include flexbox
+    align-items: flex-end
+    flex-direction: column
+    width: 370px
+    a
+      font-weight: 600
+      span
+        opacity: 0.15
+    &__call
+      margin-top: 10px
+      font-size: 16px
+      border-bottom: 1px dashed #fff
+      cursor: pointer
+      opacity: 0.55
+      transition: border-color .25s
+  &-nav
+    @include flexbox
+    align-items: center
+    justify-content: space-between
+    font-size: 17px
+    padding: 25px 0
+    b
+      font-weight: 600

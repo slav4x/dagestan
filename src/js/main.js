@@ -27,4 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const maskedElements = document.querySelectorAll('.masked');
   maskedElements.forEach((item) => new IMask(item, maskOptions));
+
+  window.onscroll = function () {
+    const header = document.querySelector('.header');
+    if (window.pageYOffset > 0) {
+      header.classList.add('fixed');
+    } else {
+      header.classList.remove('fixed');
+    }
+  };
 });
