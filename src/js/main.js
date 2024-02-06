@@ -168,4 +168,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Вызываем событие вручную для инициализации классов при первой загрузке
   reviewsSlider.emit('slideChange');
+
+  const faq = document.querySelector('.faq');
+  if (faq) {
+    faq.querySelectorAll('.faq-item').forEach((item) => {
+      const title = item.querySelector('.faq-item__title');
+      if (title) {
+        const content = item.querySelector('.faq-item__main');
+        title.addEventListener('click', () => {
+          content.classList.toggle('open');
+          title.classList.toggle('open');
+          content.style.maxHeight = content.classList.contains('open') ? `${content.scrollHeight}px` : null;
+        });
+      }
+    });
+  }
 });
