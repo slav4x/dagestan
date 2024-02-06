@@ -36,4 +36,99 @@ document.addEventListener('DOMContentLoaded', function () {
       header.classList.remove('fixed');
     }
   };
+
+  const programmSlider = new Swiper('.programm-slider', {
+    autoHeight: true,
+    spaceBetween: '14px',
+    pagination: {
+      el: '.programm-dots',
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="${className}"></span>`;
+      },
+    },
+  });
+
+  const updateSwiperHeight = () => {
+    programmSlider.updateAutoHeight();
+  };
+
+  const accordionItems = document.querySelectorAll('.programm-accordion');
+  accordionItems.forEach((item) => {
+    const title = item.querySelector('.programm-accordion__title');
+    const content = item.querySelector('.programm-accordion__main');
+
+    title.addEventListener('click', () => {
+      title.classList.toggle('open');
+      content.classList.toggle('open');
+      content.style.height = content.classList.contains('open') ? `${content.scrollHeight}px` : null;
+
+      updateSwiperHeight();
+    });
+
+    content.addEventListener('transitionend', () => {
+      updateSwiperHeight();
+    });
+  });
+
+  const dayTabs = document.querySelectorAll('.programm-days li');
+
+  const updateActiveTab = (index) => {
+    dayTabs.forEach((tab, idx) => {
+      if (idx === index) {
+        tab.classList.add('active');
+      } else {
+        tab.classList.remove('active');
+      }
+    });
+  };
+
+  updateActiveTab(programmSlider.activeIndex);
+
+  programmSlider.on('slideChange', () => {
+    updateSwiperHeight();
+    updateActiveTab(programmSlider.activeIndex);
+  });
+
+  document.querySelectorAll('.programm-days li').forEach((tab, idx) => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.programm-days li').forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      programmSlider.slideTo(idx);
+    });
+  });
+
+  const prevButton = document.querySelector('.programm-prev');
+  const nextButton = document.querySelector('.programm-next');
+
+  const updateControlButtons = () => {
+    if (programmSlider.isBeginning) {
+      prevButton.classList.add('disabled');
+    } else {
+      prevButton.classList.remove('disabled');
+    }
+
+    if (programmSlider.isEnd) {
+      nextButton.classList.add('disabled');
+    } else {
+      nextButton.classList.remove('disabled');
+    }
+  };
+
+  prevButton.addEventListener('click', () => {
+    programmSlider.slidePrev();
+  });
+
+  nextButton.addEventListener('click', () => {
+    programmSlider.slideNext();
+  });
+
+  // Обновляем состояние кнопок управления при смене слайда
+  programmSlider.on('slideChange', () => {
+    updateControlButtons();
+  });
+
+  // Начальное обновление состояния кнопок управления
+  updateControlButtons();
 });
