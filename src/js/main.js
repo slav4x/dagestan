@@ -129,4 +129,43 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   updateControlButtons();
+
+  const reviewsSlider = new Swiper('.reviews-slider', {
+    loop: true,
+    centeredSlides: true,
+    spaceBetween: '20px',
+    slidesPerView: 3,
+    slidesPerGroup: 1,
+    loopAddBlankSlides: true,
+    pagination: {
+      el: '.reviews-dots',
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="${className}"></span>`;
+      },
+    },
+  });
+
+  reviewsSlider.on('slideChange', function () {
+    // Удаляем классы prev и next со всех слайдов
+    reviewsSlider.slides.forEach((slide) => {
+      slide.classList.remove('prev', 'next');
+    });
+
+    // Получаем текущий активный индекс
+    let activeIndex = reviewsSlider.activeIndex;
+
+    // Добавляем класс prev всем слайдам до активного слайда
+    for (let i = 0; i < activeIndex; i++) {
+      reviewsSlider.slides[i].classList.add('prev');
+    }
+
+    // Добавляем класс next всем слайдам после активного слайда
+    for (let i = activeIndex + 1; i < reviewsSlider.slides.length; i++) {
+      reviewsSlider.slides[i].classList.add('next');
+    }
+  });
+
+  // Вызываем событие вручную для инициализации классов при первой загрузке
+  reviewsSlider.emit('slideChange');
 });
