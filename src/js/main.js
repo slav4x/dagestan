@@ -147,26 +147,21 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   reviewsSlider.on('slideChange', function () {
-    // Удаляем классы prev и next со всех слайдов
     reviewsSlider.slides.forEach((slide) => {
       slide.classList.remove('prev', 'next');
     });
 
-    // Получаем текущий активный индекс
-    let activeIndex = reviewsSlider.activeIndex;
+    const activeIndex = reviewsSlider.activeIndex;
 
-    // Добавляем класс prev всем слайдам до активного слайда
     for (let i = 0; i < activeIndex; i++) {
       reviewsSlider.slides[i].classList.add('prev');
     }
 
-    // Добавляем класс next всем слайдам после активного слайда
     for (let i = activeIndex + 1; i < reviewsSlider.slides.length; i++) {
       reviewsSlider.slides[i].classList.add('next');
     }
   });
 
-  // Вызываем событие вручную для инициализации классов при первой загрузке
   reviewsSlider.emit('slideChange');
 
   const faq = document.querySelector('.faq');
