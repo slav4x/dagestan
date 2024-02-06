@@ -1,0 +1,151 @@
+.tour
+  background: var(--color-bg)
+  &-row
+    @include flexbox
+    align-items: flex-end
+    margin-top: 80px
+  &-date
+    @include flexbox
+    align-items: flex-start
+    width: 620px
+    gap: 10px
+    &__item
+      background: #fff
+      width: calc(100% / 2 - 5px)
+      height: 260px
+      padding: 40px
+      border-radius: 15px
+      @include flexbox
+      flex-direction: column
+      align-items: flex-start
+      justify-content: space-between
+    &__title
+      font-size: 30px
+      font-weight: 600
+      text-transform: uppercase
+      i
+        display: inline-block
+        width: 30px
+        height: 30px
+        background-size: cover
+        margin-left: 5px
+        @for $i from 1 through 5
+          &.i-#{$i}
+            background-image: url(../img/i-#{$i}.png)
+    &__list
+      font-weight: 500
+      font-size: 18px
+      color: var(--color-gray)
+      line-height: 1.45
+    &__wa
+      width: calc(100% / 2 - 5px)
+      border-radius: 15px
+      color: #fff
+      padding: 30px
+      background: #90bc4f url(../img/svg/date-wa.svg) no-repeat bottom 23px right
+      h4
+        font-size: 20px
+        font-weight: 600
+      p
+        margin-top: 15px
+        font-size: 15px
+        font-weight: 500
+        line-height: 1.2
+        span
+          color: rgba(255,255,255,.75)
+          font-weight: 400
+  &-steps
+    @include flexbox
+    align-items: flex-start
+    gap: 20px
+    margin-top: 50px
+    &__item
+      width: calc((100% - 60px) / 4)
+      background: #fff
+      border-radius: 15px
+      height: 260px
+      padding: 0 35px 35px
+      position: relative
+      img
+        width: 100px
+        height: 100px
+        border-radius: 100%
+        object-fit: cover
+        object-position: center
+        margin-top: -10px
+      h4
+        margin-top: 20px
+        font-size: 20px
+        font-weight: 600
+      p
+        font-size: 15px
+        margin-top: 10px
+      span
+        width: 70px
+        height: 14px
+        position: absolute
+        top: 33px
+        right: 40px
+        background: url(../img/svg/step-arrow.svg) no-repeat
+  &-go
+    height: 700px
+    position: relative
+    margin-top: 40px
+    img
+      width: calc(100% + 270px)
+      max-width: initial
+      height: 100%
+      margin-left: -135px
+      margin-right: -135px
+      border-radius: 45px
+      background: #000
+      object-fit: cover
+      object-position: center
+    span
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      font-size: 25px
+      font-weight: 800
+      line-height: 1.45
+      color: rgba(255,255,255,.4)
+      text-shadow: 0px 4px 35px rgba(0, 0, 0, 0.45)
+      text-transform: uppercase
+  &-form
+    width: calc(100% - 620px - 40px)
+    margin-left: auto
+    background: #fff
+    border-radius: 25px
+    padding: 60px
+    &__title
+      text-align: center
+      font-size: 35px
+      font-weight: 600
+      text-transform: uppercase
+    &__subtitle
+      font-size: 18px
+      font-weight: 500
+      line-height: 1.45
+      margin: 15px 0 30px
+      color: var(--color-gray)
+      text-align: center
+    .input
+      margin-bottom: 10px
+    .btn
+      width: 100%
+      padding-left: 0
+      padding-right: 0
+    &__total
+      @include flexbox
+      align-items: center
+      justify-content: space-between
+      margin: 25px 0
+      p
+        font-size: 18px
+        font-weight: 500
+        line-height: 1.45
+        color: var(--color-gray)
+      h4
+        font-size: 40px
+        font-weight: 600
