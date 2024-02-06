@@ -1,5 +1,19 @@
 .faq
   background: var(--color-bg)
+  padding-bottom: 60px
+  position: relative
+  z-index: 4
+  &::after
+    content: ''
+    position: absolute
+    bottom: -10px
+    left: 64px
+    right: 64px
+    margin: 0 auto
+    max-width: 800px
+    height: 20px
+    border-radius: 10px
+    background: var(--color-bg)
   &-main
     max-width: 1850px
     width: calc(100% - 70px)
