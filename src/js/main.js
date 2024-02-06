@@ -124,11 +124,9 @@ document.addEventListener('DOMContentLoaded', function () {
     programmSlider.slideNext();
   });
 
-  // Обновляем состояние кнопок управления при смене слайда
   programmSlider.on('slideChange', () => {
     updateControlButtons();
   });
 
-  // Начальное обновление состояния кнопок управления
   updateControlButtons();
 });
