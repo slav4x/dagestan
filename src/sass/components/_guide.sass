@@ -1,0 +1,131 @@
+.guide
+  background: var(--color-bg)
+  &-main
+    max-width: 1850px
+    width: calc(100% - 70px)
+    margin: 0 auto
+    position: relative
+    background: url(../img/guide-bg.jpg) no-repeat center
+    padding: var(--gap) 0
+    border-radius: 35px
+    overflow: hidden
+    .title
+      color: #fff
+      text-align: left
+      max-width: 670px
+    &::before, &::after
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      width: 20px
+      height: 400px
+      background: var(--color-bg)
+      border-radius: 10px
+      margin: auto 0
+      z-index: 10
+    &::before
+      left: -10px
+    &::after
+      right: -10px
+    .container
+      z-index: initial
+  &-bush
+    position: absolute
+    bottom: 0
+    left: 995px
+    z-index: 1
+  &-pdf
+    position: absolute
+    top: -55px
+    left: 475px
+  &-text
+    max-width: 535px
+    padding-left: 50px
+    margin-top: 30px
+    color: #fff
+    font-size: 18px
+    line-height: 1.45
+    font-weight: 500
+    background: url("data:image/svg+xml,%3Csvg width='34' height='8' viewBox='0 0 34 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='4' r='3' stroke='white' stroke-opacity='0.75' stroke-width='2'/%3E%3Ccircle cx='17' cy='4' r='3' stroke='white' stroke-opacity='0.55' stroke-width='2'/%3E%3Ccircle cx='4' cy='4' r='3' stroke='white' stroke-opacity='0.25' stroke-width='2'/%3E%3C/svg%3E%0A") no-repeat top 10px left
+    position: relative
+    b
+      font-weight: 700
+    &::before
+      content: ''
+      position: absolute
+      bottom: -25px
+      right: 30px
+      width: 43px
+      height: 42px
+      background: url(../img/svg/guide-arrow.svg) no-repeat
+  &-form
+    background: #fff
+    max-width: 500px
+    border-radius: 15px
+    padding: 50px
+    margin-top: 50px
+    @include flexbox
+    align-items: flex-start
+    flex-direction: column
+    gap: 15px
+    .btn
+      padding-left: 0
+      padding-right: 0
+      width: 100%
+    &__text
+      max-width: 300px
+      margin: 0 auto
+      font-size: 15px
+      line-height: 1.45
+      a
+        font-weight: 600
+        color: #5891d3
+        border-bottom: 1px solid #5891D3
+    &__switch
+      @include flexbox
+      align-items: center
+      gap: 15px
+      p
+        width: 100%
+        font-size: 16px
+        line-height: 1.45
+        font-weight: 600
+      label
+        display: block
+        flex: 1
+        input
+          @include visually-hidden
+          &:checked + span
+            background: var(--color-green)
+            border-color: var(--color-green)
+            color: #fff
+            i
+              opacity: 1
+              filter: invert(1)
+        span
+          font-size: 14px
+          font-weight: 700
+          @include flexbox
+          align-items: center
+          justify-content: center
+          gap: 10px
+          height: 50px
+          width: 100%
+          border-radius: 99px
+          background: #fafafa
+          border: 1px solid rgba(0,0,0,0.03)
+          cursor: pointer
+          transition: .25s
+          box-shadow: inset 0px 4px 10px rgba(255, 255, 255, 0.25)
+          i
+            opacity: 0.15
+            transition: .25s
+        .w
+          width: 16px
+          height: 16px
+          background: url(../img/svg/w.svg) no-repeat
+        .t
+          width: 16px
+          height: 14px
+          background: url(../img/svg/t.svg) no-repeat
