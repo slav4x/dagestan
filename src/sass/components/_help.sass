@@ -1,0 +1,73 @@
+.help
+  padding: 75px 0
+  background: var(--color-bg)
+  .container
+    @include flexbox
+    align-items: flex-start
+    justify-content: space-between
+  &-photo
+    width: 580px
+    margin-top: -30px
+  &-main
+    width: calc(100% - 580px - 40px)
+    max-width: 620px
+    padding-top: 30px
+    @include flexbox
+    align-items: flex-start
+    flex-direction: column
+    .title
+      text-align: left
+    .subtitle
+      text-align: left
+      margin-top: 20px
+      font-size: 18px
+  &-contact
+    margin-top: 55px
+    background: #fff
+    padding: 25px 45px
+    border-radius: 8px
+    p
+      font-size: 15px
+      font-weight: 500
+      opacity: 0.55
+      margin-top: 10px
+  &-tel
+    font-size: 45px
+    font-weight: 600
+    line-height: 1.45
+    span
+      opacity: 0.1
+  &-social
+    margin-top: 20px
+    @include flexbox
+    align-items: flex-start
+    gap: 10px
+    li
+      a
+        @include flexbox
+        align-items: center
+        justify-content: center
+        gap: 10px
+        padding: 15px 25px
+        line-height: 22px
+        font-size: 18px
+        font-weight: 600
+        border-radius: 8px
+        color: #fff
+        box-shadow: inset 0px 4px 25px rgba(255, 255, 255, 0.25)
+        &::before
+          content: ''
+          display: block
+          background-repeat: no-repeat
+          background-position: center
+          width: 16px
+          height: 16px
+          filter: invert(1)
+        &.w
+          background: #90bc4f
+          &::before
+            background-image: url(../img/svg/w.svg)
+        &.t
+          background: #5891d3
+          &::before
+            background-image: url(../img/svg/t.svg)
