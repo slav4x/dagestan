@@ -1,8 +1,8 @@
 .programm
   background: var(--color-bg) url(../img/svg/programm-bg.svg) no-repeat top 150px center
   padding: var(--gap) 0
-  border-bottom-left-radius: 35px
-  border-bottom-right-radius: 35px
+  border-bottom-left-radius: var(--border-radius)
+  border-bottom-right-radius: var(--border-radius)
   .title
     max-width: 780px
     margin: 0 auto
@@ -54,6 +54,8 @@
       height: 365px
       border-radius: 15px
       transform: rotate(-2deg)
+      object-fit: cover
+      object-position: center
     &__label
       position: absolute
       z-index: 5
@@ -97,7 +99,7 @@
         span
           opacity: 0.45
   &-row
-    margin-bottom: 35px
+    margin-bottom: var(--spacing)
     @include flexbox
     align-items: flex-start
     gap: 40px

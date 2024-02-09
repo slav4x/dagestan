@@ -1,11 +1,11 @@
 .travel
   max-width: 1850px
-  width: calc(100% - 70px)
-  margin: 35px auto 0
+  width: calc(100% - calc(var(--spacing) * 2))
+  margin: var(--spacing) auto 0
   position: relative
   background: url(../img/travel-bg.jpg) no-repeat center
   padding: var(--gap) 0
-  border-radius: 35px
+  border-radius: var(--border-radius)
   &::before, &::after
     content: ''
     position: absolute
