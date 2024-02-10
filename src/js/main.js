@@ -28,13 +28,30 @@ document.addEventListener('DOMContentLoaded', function () {
   const maskedElements = document.querySelectorAll('.masked');
   maskedElements.forEach((item) => new IMask(item, maskOptions));
 
+  let lastScrollTop = 0;
+  const header = document.querySelector('.header');
+  const headerMobile = document.querySelector('.header-mobile');
+
   window.onscroll = function () {
-    const header = document.querySelector('.header');
-    if (window.pageYOffset > 0) {
-      header.classList.add('fixed');
+    let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScrollTop > lastScrollTop) {
+      // Scroll Down
+      if (window.innerWidth > 1024) {
+        header.classList.toggle('fixed', currentScrollTop > 0);
+      } else {
+        headerMobile.classList.toggle('fixed', currentScrollTop > 0);
+      }
     } else {
-      header.classList.remove('fixed');
+      // Scroll Up
+      if (window.innerWidth > 1024) {
+        header.classList.toggle('fixed', currentScrollTop > 0);
+      } else {
+        headerMobile.classList.toggle('fixed', currentScrollTop > 0);
+      }
     }
+
+    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
   };
 
   const programmSlider = new Swiper('.programm-slider', {

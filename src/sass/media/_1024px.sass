@@ -1,0 +1,235 @@
+@media(max-width: 1024px)
+  .container
+    max-width: 576px
+    padding: 0 24px
+
+  .header
+    display: none
+    &-mobile
+      @include flexbox
+      align-items: center
+      justify-content: space-between
+      background: transparent
+      border: 1px solid transparent
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0)
+      padding: 7px 10px
+      border-radius: 8px
+      position: fixed
+      z-index: 999
+      left: 20px
+      right: 20px
+      top: 10px
+      margin: 0 auto
+      max-width: 576px
+      transition: .25s
+      &.fixed
+        background: #FAFAFA
+        border: 1px solid #fff
+        box-shadow: 40px 40px 65px rgba(0, 0, 0, 0.12)
+        padding: 7px 20px
+      &__burger
+        width: 52px
+        height: 52px
+        border-radius: 100%
+        cursor: pointer
+        background: #fff
+        @include flexbox
+        align-items: center
+        justify-content: center
+        span
+          @include flexbox
+          flex-direction: column
+          align-items: flex-start
+          justify-content: space-between
+          width: 16px
+          height: 12px
+          i
+            display: block
+            width: 100%
+            height: 2px
+            background: #899db2
+            border-radius: 99px
+            &:nth-child(1)
+              width: 65%
+              margin-left: auto
+            &:nth-child(3)
+              width: 65%
+      &__phone
+        width: 52px
+        height: 52px
+        border-radius: 100%
+        cursor: pointer
+        background: #83B53B url(../img/svg/phone.svg) no-repeat center
+        box-shadow: inset 0px 4px 25px rgba(255, 255, 255, 0.25)
+        display: block
+      &__logo
+        display: block
+        padding: 5px
+        border-radius: 100%
+        background: rgba(255,255,255,.15)
+        border: 1px solid rgba(255,255,255,.5)
+        img
+          width: 52px
+          height: 52px
+
+  .promo
+    position: relative
+    background: none
+    padding-top: 120px
+    height: auto
+    &::after
+      content: ''
+      position: absolute
+      left: 64px
+      right: 64px
+      height: 10px
+      border-radius: 99px
+      background: #FAFAFA
+      top: 810px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      height: 815px
+      background: url(../img/promo-bg.jpg) no-repeat top center / cover
+    &-title
+      font-size: 30px
+      text-transform: none
+      max-width: 350px
+      span
+        font-weight: 500
+    &-subtitle
+      font-size: 15px
+      max-width: 330px
+      margin: 15px auto 0
+      line-height: 1.5
+      i
+        display: inline
+      span
+        font-size: 11px
+        transform: rotate(-2deg)
+        &::before
+          background-size: cover
+          width: 70px
+          height: 22px
+          opacity: 0.15
+    &-form, &-manager
+      display: none
+    &-total
+      @include flexbox
+      align-items: flex-start
+      margin-top: 285px
+      gap: 10px
+      &__price
+        width: 100%
+        margin-bottom: 25px
+        h4
+          font-size: 45px
+          font-weight: 400
+        p
+          margin-top: 5px
+          font-size: 12px
+          line-height: 1.5
+          b
+            font-weight: 600
+    &-btn
+      flex: 1
+      height: 50px
+      border-radius: 7px
+      @include flexbox
+      align-items: center
+      justify-content: center
+      text-align: center
+      font-size: 9px
+      font-weight: 700
+      text-transform: uppercase
+      line-height: 1.4
+      &__orange
+        background: radial-gradient(173.53% 198.33% at 10.23% -99.37%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%), #EACD62
+        box-shadow: inset 0px 4px 25px rgba(255, 255, 255, 0.25)
+        color: #443f2d
+      &__green
+        background: #83B53B
+        box-shadow: inset 0px 4px 25px rgba(255, 255, 255, 0.25)
+      &__white
+        flex: initial
+        width: 100%
+        height: 60px
+        background: #f8f8f8
+        font-size: 12px
+        color: #3a434d
+        position: relative
+        &::before
+          content: ''
+          position: absolute
+          bottom: 0
+          left: 20%
+          width: 103px
+          height: 79px
+          background: url(../img/promo-wa.png) no-repeat / cover
+          pointer-events: none
+        &::after
+          content: ''
+          position: absolute
+          top: 0
+          right: 0
+          background: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_i_147_564)'%3E%3Cpath d='M0 -0.000488281H20C23.866 -0.000488281 27 3.13352 27 6.99951V26.9995L13.1932 13.8063L0 -0.000488281Z' fill='%2383B53B'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_147_564' x='0' y='-0.000488281' width='27' height='31' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='4'/%3E%3CfeGaussianBlur stdDeviation='12.5'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_147_564'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A") no-repeat
+          width: 27px
+          height: 27px
+        p
+          margin-left: 130px
+          i
+            display: inline-block
+            width: 10px
+            height: 10px
+            background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.44318 0.0137016C3.74881 0.119862 3.26604 0.271264 2.69941 0.560538C0.64173 1.611 -0.42142 3.9494 0.156257 6.15414C0.200459 6.32283 0.307671 6.62801 0.394507 6.83232C0.481303 7.03663 0.559988 7.24778 0.569275 7.30154C0.578602 7.3553 0.456224 7.98433 0.297365 8.69942C0.138506 9.41451 0.0100159 9.99955 0.0118577 9.99951C0.0136994 9.99951 0.627819 9.86031 1.37658 9.69018L2.73797 9.38089L3.06063 9.51669C4.27398 10.0273 5.6539 10.037 6.88783 9.54347C8.21532 9.01259 9.30606 7.8639 9.75117 6.52823C9.95047 5.93013 10 5.617 10 4.95544C10 4.09227 9.83432 3.40616 9.45046 2.67957C8.76153 1.37561 7.52746 0.435021 6.06939 0.10254C5.74348 0.0282082 4.71544 -0.0279417 4.44318 0.0137016ZM6.0498 0.90561C7.2541 1.21381 8.28002 2.05578 8.81651 3.17632C9.36754 4.3272 9.37193 5.55628 8.82905 6.70923C8.19667 8.05213 6.94457 8.93298 5.42549 9.10354C4.69809 9.18522 3.89568 9.04395 3.17634 8.7076L2.8495 8.55475L1.96844 8.75307C1.48383 8.86216 1.0792 8.9433 1.06925 8.93333C1.05929 8.9234 1.13684 8.52542 1.24159 8.04897L1.43207 7.18271L1.22297 6.76315C1.10624 6.52893 0.967638 6.1708 0.909251 5.95253C0.816263 5.60504 0.804703 5.49192 0.805526 4.93589C0.806349 4.38886 0.819202 4.26256 0.907762 3.93075C1.22133 2.75578 2.04701 1.74191 3.11087 1.22546C3.82518 0.878708 4.34902 0.765469 5.12893 0.789204C5.5282 0.801364 5.75406 0.829909 6.0498 0.90561ZM3.11823 2.91954C2.69828 3.30582 2.60729 3.90377 2.87618 4.51047C3.11337 5.04569 3.84427 5.92552 4.37774 6.31806C4.93422 6.72749 5.75269 7.03893 6.28491 7.04374C6.57344 7.04636 6.6187 7.03545 6.85311 6.90689C7.19712 6.71818 7.32479 6.53554 7.35237 6.19246L7.37314 5.93431L6.84864 5.67953C6.56011 5.53939 6.28652 5.4247 6.24059 5.4247C6.1895 5.42466 6.11493 5.48155 6.04851 5.57129C5.86449 5.81982 5.66507 6.01119 5.59011 6.01119C5.38121 6.01119 4.65863 5.54701 4.37159 5.22841C4.1864 5.02289 3.87499 4.58061 3.87499 4.52313C3.87499 4.50534 3.96316 4.39023 4.07092 4.26737C4.1987 4.12164 4.26685 4.00848 4.26685 3.94197C4.26685 3.81829 3.90571 2.94261 3.81213 2.83946C3.76111 2.78319 3.69085 2.76575 3.51538 2.76575C3.30225 2.76575 3.27325 2.77697 3.11823 2.91954Z' fill='%2383B53B'/%3E%3C/svg%3E%0A") no-repeat
+
+  .promo-tour
+    width: 100%
+    padding: 40px 15px
+    margin: 33px 0 0
+    color: var(--color-black)
+    &::before
+      transform: none
+      top: 0
+      left: -500px
+      right: -500px
+      bottom: 0
+      border-radius: 0
+      background: #FAFAFA
+      opacity: 1
+    &::after
+      display: none
+  .promo-tour__title
+    font-size: 30px
+    text-shadow: none
+    text-transform: none
+    max-width: 290px
+  .promo-tour__arrow
+    display: none
+  .promo-tour>p
+    font-size: 15px
+    margin: 20px 0
+  .promo-tour__photos
+    position: relative
+    left: 0
+    right: 0
+    top: 0
+    max-width: 100%
+    margin-bottom: 20px
+  .promo-tour .btn
+    width: 100%
+
+  .btn
+    font-size: 16px
+    padding: 30px
+
+  .showreel
+    margin: 0
+    padding: 0 40px 40px
+    border-radius: 0
+  .showreel-video img
+    height: 550px
+    border-radius: 25px
