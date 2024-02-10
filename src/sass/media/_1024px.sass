@@ -3,6 +3,12 @@
     max-width: 576px
     padding: 0 24px
 
+  .title
+    font-size: 30px !important
+    text-transform: none
+  .subtitle
+    font-size: 15px
+
   .header
     display: none
     &-mobile
@@ -230,6 +236,321 @@
     margin: 0
     padding: 0 40px 40px
     border-radius: 0
+    &-v2
+      .container
+        padding: 0
+      .title
+        margin-bottom: 10px
   .showreel-video img
     height: 550px
     border-radius: 25px
+
+  .vacation
+    background: #fff
+    border-radius: 0
+    padding: 40px 15px
+    .title
+      text-align: left
+      span
+        display: block
+    .subtitle
+      text-align: left
+      span
+        display: block
+  .vacation-grid
+    margin-top: 30px
+    gap: 15px
+  .vacation-item
+    width: 100%
+    padding: 25px
+    height: auto
+    transform: rotate(1deg)
+    &:nth-child(2n)
+      transform: rotate(-1deg)
+  .vacation-bg
+    border-radius: 10px
+    background: #fafafa
+    transform: none !important
+    img
+      height: 220px
+      object-position: 0 -40px
+  .vacation-title
+    margin: 0
+    font-size: 14px
+    transform: none
+    max-width: 200px
+    line-height: 1.4
+    position: absolute
+    top: 25px
+    left: 25px
+    &::after
+      width: 27px
+      height: 22px
+      background-size: cover
+      top: -1px
+      left: -10px
+  .vacation-text
+    font-size: 15px
+    color: #4b5662
+    padding-top: 220px
+
+  .vacation::after
+    height: 10px
+    bottom: -5px
+    background: #fff
+
+  .about
+    background: #fff
+    &-main
+      width: 100%
+      margin: 0
+      border-radius: 0
+      padding: 40px 0
+      background-size: auto 730px
+      background-position: top center
+      background-image: url(../img/about-mobile.jpg)
+      &::before, &::after
+        display: none
+    .title
+      letter-spacing: -0.02em
+      max-width: 370px
+      margin: 0 auto
+    .subtitle
+      max-width: 340px
+      margin: 20px auto 0
+  .about-list
+    margin-top: 340px
+    padding: 20px 0
+    border-radius: 15px
+    background: #fafafa
+    border: 1px solid rgba(0,0,0,0.05)
+  .about-row
+    padding: 0
+    border: 0
+    &:last-child .about-group:last-child
+      border: 0
+    &:first-child
+      .about-group
+        &:nth-child(1),
+        &:nth-child(2)
+          width: 50%
+        &:nth-child(2)
+          padding-left: 15px
+          padding-right: 15px
+  .about-group
+    width: 100%
+    padding: 15px 35px
+    border-bottom: 1px solid rgba(0,0,0,0.05)
+    h4
+      font-size: 15px
+      width: auto
+    p
+      margin-top: 5px
+  .about-group span
+    margin-top: 0
+    margin-left: auto
+    i
+      width: 20px
+      height: 20px
+  .about-grid
+    margin-top: 20px
+    gap: 20px
+  .about-item
+    width: 100%
+    padding: 30px 30px
+    background: #fafafa
+    color: var(--color-black)
+    backdrop-filter: none
+    border-radius: 10px
+    h4
+      font-size: 15px
+      width: calc(100% - 70px)
+    p
+      font-size: 15px
+      margin-top: 5px
+      width: calc(100% - 70px)
+    img
+      width: 100px
+      right: -15px
+      top: 0
+      bottom: 0
+      margin: auto 0
+      transform: rotate(2deg)
+
+  .programm
+    padding: 40px 15px 55px
+    background: var(--color-bg)
+    &-days, &-control
+      display: none
+    .title
+      text-align: left
+    .subtitle
+      text-align: left
+      margin-top: 15px
+    &-wrapper
+      padding: 0
+      border: 0
+      border-radius: 0
+      margin-top: 18px
+      overflow: inherit
+    &-slider
+      overflow-x: scroll
+      width: calc(100% + 80px)
+      margin-left: -40px
+      margin-right: -40px
+      padding: 0 40px
+      -ms-overflow-style: none
+      scrollbar-width: none
+      &::-webkit-scrollbar
+        width: 0px
+        background: transparent
+    .swiper-wrapper
+      flex-wrap: nowrap
+      width: auto
+      gap: 10px
+      padding-top: 12px
+    .swiper-slide
+      width: auto
+      height: auto
+      &:last-child
+        padding-right: 40px
+    &-day
+      width: 100%
+      height: 100%
+      padding: 40px 25px 25px
+      border-radius: 15px
+      // overflow: hidden
+      @include flexbox
+      align-items: flex-start
+      gap: 50px
+      &__poster
+        width: 270px
+        height: 200px
+        border-radius: 7px
+        transform: none
+      &__title
+        display: none
+        font-size: 18px
+        padding: 0 0 15px
+        font-weight: 600
+        &.mob
+          display: block
+      &__label
+        top: -50px
+        left: 0px
+        box-shadow: none
+        width: 71px
+        height: 32px
+        transform: rotate(-1deg)
+        font-size: 10px
+      &__list
+        font-size: 14px
+        margin: 0
+        line-height: 1.35
+    &-row
+      flex-direction: column
+      align-items: flex-start
+      gap: 15px
+      width: auto
+      &:first-child
+        width: 270px
+      &:not(:first-child)
+        flex-direction: row
+        gap: 50px
+        height: 100%
+        .programm-col
+          @include flexbox
+          align-items: flex-start
+          width: auto
+          gap: 50px
+          height: 100%
+    &-accordion
+      width: 270px
+      height: 100%
+      margin: 0
+      border: 0
+      border-radius: 0
+      background: transparent
+      @include flexbox
+      flex-direction: column
+      align-items: flex-start
+      &__title
+        width: 100%
+        height: auto
+        padding: 0
+        padding-left: 18px
+        h4
+          width: 100%
+          font-size: 18px
+          font-weight: 600
+        span
+          display: none
+        &::before
+          content: ''
+          position: absolute
+          top: 7px
+          left: 0
+          width: 8px
+          height: 8px
+          border-radius: 100%
+          background: var(--color-green)
+      &__main
+        width: 100%
+        flex: 1
+        height: auto
+      &__content
+        padding: 15px 0 0
+        font-size: 14px
+        border: 0
+        height: 100%
+        @include flexbox
+        flex-direction: column
+        align-items: flex-start
+        p
+          width: 100%
+          margin-top: 15px
+          padding: 0
+          &:first-child::before
+            display: none
+        img
+          height: auto
+          flex: 1
+          border-radius: 7px
+      &:nth-of-type(even)
+        .programm-accordion__content img
+          margin-top: 0
+          margin-bottom: 20px
+          order: -1
+    &-list
+      @include flexbox
+      align-items: flex-start
+      height: 15px
+      border-radius: 99px
+      background: #fff
+      margin-top: 15px
+      li
+        display: block
+        height: 100%
+        flex: 1
+        border-radius: 99px
+        position: relative
+        box-shadow: 0px 4px 25px 0px rgba(255, 255, 255, 0.25) inset
+        transition: .15s
+        &.active
+          background: var(--color-green)
+        span
+          display: block
+          font-size: 8px
+          line-height: 10px
+          opacity: 0.45
+          transform: translateY(20px)
+    &-scroll
+      display: block
+      margin-top: 20px
+      font-size: 8px
+      font-weight: 700
+      text-transform: uppercase
+      color: #abb0b6
+      line-height: 10px
+      padding-left: 20px
+      background: url("data:image/svg+xml,%3Csvg width='10' height='15' viewBox='0 0 10 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.2859 0.00243164L7.6702 0.621562L8.33324 1.2883H5.78946V2.16387H8.33324L7.6702 2.83061L8.2859 3.44971L10 1.72608L8.2859 0.00243164ZM2.4653 1.38524C3.40046 1.38524 4.16128 2.1503 4.16128 3.09067V4.24948C4.62504 3.80007 4.91399 3.16951 4.91399 2.47069C4.91402 1.10616 3.81399 0 2.45703 0C1.10006 0 0 1.10616 0 2.47069C0 3.1778 0.295861 3.81501 0.769325 4.26539V3.09064C0.769354 2.15027 1.53014 1.38524 2.4653 1.38524Z' fill='%23ABB0B6'/%3E%3Cpath d='M7.5718 6.73193C7.10177 6.73193 6.72072 7.11511 6.72072 7.58775V7.03111C6.72072 6.55847 6.33967 6.17529 5.86964 6.17529C5.39962 6.17529 5.01857 6.55847 5.01857 7.03111V6.56236C5.01857 6.08972 4.63752 5.70654 4.16749 5.70654C3.69747 5.70654 3.31642 6.08972 3.31642 6.56236V3.09068C3.31642 2.61804 2.93537 2.23486 2.46534 2.23486C1.99531 2.23486 1.61426 2.61804 1.61426 3.09068V7.56051C0.857029 7.62133 0.259277 8.26003 0.259277 9.03687V10.8954L2.18381 13.3098L2.17286 15H7.08018L7.08822 13.301L8.4229 11.2106V7.58775C8.42287 7.11508 8.04185 6.73193 7.5718 6.73193Z' fill='%23ABB0B6'/%3E%3C/svg%3E%0A") no-repeat left center

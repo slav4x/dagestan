@@ -40,112 +40,114 @@ document.addEventListener('DOMContentLoaded', function () {
       if (window.innerWidth > 1024) {
         header.classList.toggle('fixed', currentScrollTop > 0);
       } else {
-        headerMobile.classList.toggle('fixed', currentScrollTop > 0);
+        headerMobile.classList.toggle('fixed', currentScrollTop > 20);
       }
     } else {
       // Scroll Up
       if (window.innerWidth > 1024) {
         header.classList.toggle('fixed', currentScrollTop > 0);
       } else {
-        headerMobile.classList.toggle('fixed', currentScrollTop > 0);
+        headerMobile.classList.toggle('fixed', currentScrollTop > 20);
       }
     }
 
     lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
   };
 
-  const programmSlider = new Swiper('.programm-slider', {
-    autoHeight: true,
-    spaceBetween: '14px',
-    pagination: {
-      el: '.programm-dots',
-      clickable: true,
-      renderBullet: function (index, className) {
-        return `<span class="${className}"></span>`;
+  if (window.innerWidth > 1024) {
+    const programmSlider = new Swiper('.programm-slider', {
+      autoHeight: true,
+      spaceBetween: '14px',
+      pagination: {
+        el: '.programm-dots',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<span class="${className}"></span>`;
+        },
       },
-    },
-  });
-
-  const updateSwiperHeight = () => {
-    programmSlider.updateAutoHeight();
-  };
-
-  const accordionItems = document.querySelectorAll('.programm-accordion');
-  accordionItems.forEach((item) => {
-    const title = item.querySelector('.programm-accordion__title');
-    const content = item.querySelector('.programm-accordion__main');
-
-    title.addEventListener('click', () => {
-      title.classList.toggle('open');
-      content.classList.toggle('open');
-      content.style.height = content.classList.contains('open') ? `${content.scrollHeight}px` : null;
-
-      updateSwiperHeight();
     });
 
-    content.addEventListener('transitionend', () => {
-      updateSwiperHeight();
+    const updateSwiperHeight = () => {
+      programmSlider.updateAutoHeight();
+    };
+
+    const accordionItems = document.querySelectorAll('.programm-accordion');
+    accordionItems.forEach((item) => {
+      const title = item.querySelector('.programm-accordion__title');
+      const content = item.querySelector('.programm-accordion__main');
+
+      title.addEventListener('click', () => {
+        title.classList.toggle('open');
+        content.classList.toggle('open');
+        content.style.height = content.classList.contains('open') ? `${content.scrollHeight}px` : null;
+
+        updateSwiperHeight();
+      });
+
+      content.addEventListener('transitionend', () => {
+        updateSwiperHeight();
+      });
     });
-  });
 
-  const dayTabs = document.querySelectorAll('.programm-days li');
+    const dayTabs = document.querySelectorAll('.programm-days li');
 
-  const updateActiveTab = (index) => {
-    dayTabs.forEach((tab, idx) => {
-      if (idx === index) {
-        tab.classList.add('active');
-      } else {
-        tab.classList.remove('active');
-      }
-    });
-  };
+    const updateActiveTab = (index) => {
+      dayTabs.forEach((tab, idx) => {
+        if (idx === index) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+    };
 
-  updateActiveTab(programmSlider.activeIndex);
-
-  programmSlider.on('slideChange', () => {
-    updateSwiperHeight();
     updateActiveTab(programmSlider.activeIndex);
-  });
 
-  document.querySelectorAll('.programm-days li').forEach((tab, idx) => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.programm-days li').forEach((t) => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      programmSlider.slideTo(idx);
+    programmSlider.on('slideChange', () => {
+      updateSwiperHeight();
+      updateActiveTab(programmSlider.activeIndex);
     });
-  });
 
-  const prevButton = document.querySelector('.programm-prev');
-  const nextButton = document.querySelector('.programm-next');
+    document.querySelectorAll('.programm-days li').forEach((tab, idx) => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.programm-days li').forEach((t) => t.classList.remove('active'));
+        tab.classList.add('active');
 
-  const updateControlButtons = () => {
-    if (programmSlider.isBeginning) {
-      prevButton.classList.add('disabled');
-    } else {
-      prevButton.classList.remove('disabled');
-    }
+        programmSlider.slideTo(idx);
+      });
+    });
 
-    if (programmSlider.isEnd) {
-      nextButton.classList.add('disabled');
-    } else {
-      nextButton.classList.remove('disabled');
-    }
-  };
+    const prevButton = document.querySelector('.programm-prev');
+    const nextButton = document.querySelector('.programm-next');
 
-  prevButton.addEventListener('click', () => {
-    programmSlider.slidePrev();
-  });
+    const updateControlButtons = () => {
+      if (programmSlider.isBeginning) {
+        prevButton.classList.add('disabled');
+      } else {
+        prevButton.classList.remove('disabled');
+      }
 
-  nextButton.addEventListener('click', () => {
-    programmSlider.slideNext();
-  });
+      if (programmSlider.isEnd) {
+        nextButton.classList.add('disabled');
+      } else {
+        nextButton.classList.remove('disabled');
+      }
+    };
 
-  programmSlider.on('slideChange', () => {
+    prevButton.addEventListener('click', () => {
+      programmSlider.slidePrev();
+    });
+
+    nextButton.addEventListener('click', () => {
+      programmSlider.slideNext();
+    });
+
+    programmSlider.on('slideChange', () => {
+      updateControlButtons();
+    });
+
     updateControlButtons();
-  });
-
-  updateControlButtons();
+  }
 
   const reviewsSlider = new Swiper('.reviews-slider', {
     loop: true,
@@ -195,4 +197,17 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
+  const listItems = document.querySelectorAll('.programm-list li');
+  listItems.forEach((item) => {
+    item.addEventListener('click', function () {
+      const day = this.getAttribute('data-day');
+      const targetElement = document.querySelector(`.programm-slider .programm-day[data-day="${day}"]`);
+
+      if (targetElement) targetElement.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+
+      listItems.forEach((li) => li.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
 });

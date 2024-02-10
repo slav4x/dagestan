@@ -42,7 +42,7 @@
 
 <section class="vacation">
   <div class="container">
-    <h2 class="title">дагестан – <span>лучшее место</span> для вашего отпуска</h2>
+    <h2 class="title">Дагестан – <span>лучшее место</span> для вашего отпуска</h2>
     <h3 class="subtitle">Здесь вы найдете то, что <span>придется вам по душе</span></h3>
     <div class="vacation-grid">
       <div class="vacation-item">
@@ -176,8 +176,9 @@
 
 <section class="programm">
   <div class="container">
-    <h2 class="title"><span>посетим все самые захватывающие места</span> дагестана и не только...</h2>
+    <h2 class="title"><span>Посетим все самые захватывающие места</span> Дагестана и не только...</h2>
     <h3 class="subtitle">Представьте себе, что вы отправляетесь <span>в незабываемое путешествие</span>, где каждый момент наполнен приключениями и невероятными эмоциями</h3>
+    <div class="programm-scroll">листайте вправо, чтобы<br> посмотреть программу</div>
     <ul class="programm-days">
       <li class="active">День 1</li>
       <li>День 2</li>
@@ -191,10 +192,11 @@
       <div class="programm-slider">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="programm-day">
+            <div class="programm-day" data-day="1">
               <div class="programm-row">
                 <div class="programm-col">
                   <span class="programm-day__label">1 день</span>
+                  <h3 class="programm-day__title mob">Сбор туристов</h3>
                   <img src="img/programm-1.jpg" alt="" loading="lazy" class="programm-day__poster">
                 </div>
                 <div class="programm-col">
@@ -210,10 +212,11 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="programm-day">
+            <div class="programm-day" data-day="2">
               <div class="programm-row">
                 <div class="programm-col">
                   <span class="programm-day__label">2 день</span>
+                  <h3 class="programm-day__title mob">Древний город Дербент и крепость Нарын-Кала</h3>
                   <img src="img/programm-2.jpg" alt="" loading="lazy" class="programm-day__poster">
                 </div>
                 <div class="programm-col">
@@ -272,10 +275,11 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="programm-day">
+            <div class="programm-day" data-day="3">
               <div class="programm-row">
                 <div class="programm-col">
-                  <span class="programm-day__label">2 день</span>
+                  <span class="programm-day__label">3 день</span>
+                  <h3 class="programm-day__title mob">Древний город Дербент и крепость Нарын-Кала</h3>
                   <img src="img/programm-2.jpg" alt="" loading="lazy" class="programm-day__poster">
                 </div>
                 <div class="programm-col">
@@ -334,10 +338,11 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="programm-day">
+            <div class="programm-day" data-day="4">
               <div class="programm-row">
                 <div class="programm-col">
-                  <span class="programm-day__label">2 день</span>
+                  <span class="programm-day__label">4 день</span>
+                  <h3 class="programm-day__title mob">Древний город Дербент и крепость Нарын-Кала</h3>
                   <img src="img/programm-2.jpg" alt="" loading="lazy" class="programm-day__poster">
                 </div>
                 <div class="programm-col">
@@ -396,10 +401,11 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="programm-day">
+            <div class="programm-day" data-day="5">
               <div class="programm-row">
                 <div class="programm-col">
-                  <span class="programm-day__label">2 день</span>
+                  <span class="programm-day__label">5 день</span>
+                  <h3 class="programm-day__title mob">Древний город Дербент и крепость Нарын-Кала</h3>
                   <img src="img/programm-2.jpg" alt="" loading="lazy" class="programm-day__poster">
                 </div>
                 <div class="programm-col">
@@ -458,10 +464,11 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="programm-day">
+            <div class="programm-day" data-day="6">
               <div class="programm-row">
                 <div class="programm-col">
-                  <span class="programm-day__label">2 день</span>
+                  <span class="programm-day__label">6 день</span>
+                  <h3 class="programm-day__title mob">Древний город Дербент и крепость Нарын-Кала</h3>
                   <img src="img/programm-2.jpg" alt="" loading="lazy" class="programm-day__poster">
                 </div>
                 <div class="programm-col">
@@ -520,10 +527,11 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="programm-day">
+            <div class="programm-day" data-day="7">
               <div class="programm-row">
                 <div class="programm-col">
-                  <span class="programm-day__label">2 день</span>
+                  <span class="programm-day__label">7 день</span>
+                  <h3 class="programm-day__title mob">Древний город Дербент и крепость Нарын-Кала</h3>
                   <img src="img/programm-2.jpg" alt="" loading="lazy" class="programm-day__poster">
                 </div>
                 <div class="programm-col">
@@ -583,6 +591,15 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="programm-list">
+      <li data-day="1" class="active"><span>1</span></li>
+      <li data-day="2"><span>2</span></li>
+      <li data-day="3"><span>3</span></li>
+      <li data-day="4"><span>4</span></li>
+      <li data-day="5"><span>5</span></li>
+      <li data-day="6"><span>6</span></li>
+      <li data-day="7"><span>7</span></li>
     </div>
     <div class="programm-control">
       <div class="programm-prev"><p><span>Предыдущий</span><br><span>день</span></p></div>
