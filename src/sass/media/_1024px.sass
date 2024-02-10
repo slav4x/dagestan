@@ -554,3 +554,91 @@
       line-height: 10px
       padding-left: 20px
       background: url("data:image/svg+xml,%3Csvg width='10' height='15' viewBox='0 0 10 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.2859 0.00243164L7.6702 0.621562L8.33324 1.2883H5.78946V2.16387H8.33324L7.6702 2.83061L8.2859 3.44971L10 1.72608L8.2859 0.00243164ZM2.4653 1.38524C3.40046 1.38524 4.16128 2.1503 4.16128 3.09067V4.24948C4.62504 3.80007 4.91399 3.16951 4.91399 2.47069C4.91402 1.10616 3.81399 0 2.45703 0C1.10006 0 0 1.10616 0 2.47069C0 3.1778 0.295861 3.81501 0.769325 4.26539V3.09064C0.769354 2.15027 1.53014 1.38524 2.4653 1.38524Z' fill='%23ABB0B6'/%3E%3Cpath d='M7.5718 6.73193C7.10177 6.73193 6.72072 7.11511 6.72072 7.58775V7.03111C6.72072 6.55847 6.33967 6.17529 5.86964 6.17529C5.39962 6.17529 5.01857 6.55847 5.01857 7.03111V6.56236C5.01857 6.08972 4.63752 5.70654 4.16749 5.70654C3.69747 5.70654 3.31642 6.08972 3.31642 6.56236V3.09068C3.31642 2.61804 2.93537 2.23486 2.46534 2.23486C1.99531 2.23486 1.61426 2.61804 1.61426 3.09068V7.56051C0.857029 7.62133 0.259277 8.26003 0.259277 9.03687V10.8954L2.18381 13.3098L2.17286 15H7.08018L7.08822 13.301L8.4229 11.2106V7.58775C8.42287 7.11508 8.04185 6.73193 7.5718 6.73193Z' fill='%23ABB0B6'/%3E%3C/svg%3E%0A") no-repeat left center
+
+  .travel
+    margin: 0
+    width: 100%
+    background-position: top -50px right -260px
+    background-size: auto 875px
+    padding: 40px 0
+    border-radius: 0
+    &::before
+      top: 0
+      left: 64px
+      right: 64px
+      height: 10px
+      width: auto
+      top: -5px
+      background: var(--color-bg)
+      margin: 0
+    &::after
+      display: none
+    .title
+      max-width: 360px
+      font-size: 28px !important
+    .subtitle
+      max-width: 270px
+      margin: 15px auto 0
+    &-block
+      margin-top: 370px
+      margin-left: 0
+      width: 100%
+      backdrop-filter: none
+      padding: 40px 35px
+      border-radius: 15px
+      background: var(--color-bg)
+      border: 1px solid rgba(0,0,0,.05)
+      color: var(--color-black)
+      &::before, &::after
+        display: none
+    &-title
+      font-size: 25px
+    &-list
+      margin-top: 20px
+      li
+        font-size: 14px
+        padding-left: 16px
+        &::before
+          background: var(--color-green)
+          opacity: 1
+          width: 6px
+          height: 6px
+          top: 7px
+        span
+          font-weight: 700
+    &-price
+      margin-top: 20px
+      width: 100%
+      font-size: 55px
+      padding-top: 15px
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: -35px
+        right: -35px
+        height: 1px
+        background: #000
+        opacity: 0.05
+    &-info
+      margin-top: 7px
+      padding-right: 0
+      p
+        font-size: 10px
+        color: rgba(58, 67, 77, 0.45)
+      &::after
+        display: none
+      ul
+        position: relative
+        top: 0
+        left: 0
+        white-space: normal
+        width: 100%
+        box-shadow: none
+        border-radius: 10px
+        padding: 10px 15px
+        margin-top: 15px
+        opacity: 1
+        &::before
+          display: none
