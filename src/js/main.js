@@ -151,16 +151,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const reviewsSlider = new Swiper('.reviews-slider', {
     loop: true,
-    centeredSlides: true,
-    spaceBetween: '20px',
-    slidesPerView: 3,
-    slidesPerGroup: 1,
     loopAddBlankSlides: true,
-    pagination: {
-      el: '.reviews-dots',
-      clickable: true,
-      renderBullet: function (index, className) {
-        return `<span class="${className}"></span>`;
+    slidesPerView: 'auto',
+    spaceBetween: '10px',
+    breakpoints: {
+      1024: {
+        centeredSlides: true,
+        spaceBetween: '20px',
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        pagination: {
+          el: '.reviews-dots',
+          clickable: true,
+          renderBullet: function (index, className) {
+            return `<span class="${className}"></span>`;
+          },
+        },
       },
     },
   });
