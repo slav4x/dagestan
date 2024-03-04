@@ -4,3 +4,296 @@
   border-top-left-radius: var(--border-radius)
   border-top-right-radius: var(--border-radius)
   margin-top: var(--spacing)
+  .title
+    margin-bottom: 80px
+  &-credit
+    background: #fff url(../img/price-credit.png) no-repeat left 610px bottom
+    border-radius: 15px
+    padding: 50px 70px 70px
+    margin-top: 50px
+    &__content
+      max-width: 510px
+      h3
+        font-size: 35px
+        font-weight: 500
+        margin-bottom: 20px
+      & > p
+        max-width: 480px
+        line-height: 1.45
+        margin-bottom: 40px
+        font-size: 18px
+      .btn
+        padding-left: 0
+        padding-right: 0
+        width: 100%
+  &-accordion
+    margin-top: 25px
+    background: #fff
+    border-radius: 15px
+    &__title
+      @include flexbox
+      align-items: center
+      padding: 25px 40px
+      min-height: 100px
+      cursor: pointer
+      h4
+        width: calc(100% - 65px)
+        text-transform: uppercase
+        font-weight: 600
+        font-size: 25px
+        cursor: pointer
+      span
+        display: block
+        margin-left: auto
+        position: relative
+        width: 44px
+        height: 44px
+        border-radius: 100%
+        border: 1px solid rgba(0,0,0,.1)
+        &::before, &::after
+          content: ''
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          background: #3a434d
+          transition: .25s
+        &::before
+          width: 16px
+          height: 6px
+        &::after
+          width: 6px
+          height: 16px
+      &.open span::after
+        transform: translate(-50%, -50%) rotate(90deg)
+    &__wrapper
+      overflow: hidden
+      max-height: 0px
+      transition: var(--transition, .4s)
+    &__content
+      padding: 50px
+      border-top: 1px solid #F2F2F2
+      color: var(--color-gray)
+      position: relative
+      h3
+        font-size: 25px
+        font-weight: 600
+        line-height: 1.45
+        text-transform: uppercase
+      ul:not(.price-residence__list):not(.price-route__list)
+        padding: 20px 25px
+        border-radius: 15px
+        border: 1px solid #F2F2F2
+        line-height: 1.45
+        font-weight: 500
+        li
+          margin-top: 10px
+          position: relative
+          padding-left: 23px
+          &::before
+            content: ''
+            width: 8px
+            height: 8px
+            border-radius: 100%
+            background: #5891d3
+            position: absolute
+            top: 8px
+            left: 0
+          &:first-child
+            margin-top: 0
+          span
+            opacity: 0.45
+      .text
+        line-height: 1.45
+        font-weight: 500
+        font-size: 18px
+        p
+          margin-top: 20px
+          &:first-child
+            margin-top: 0
+        b
+          font-weight: 600
+  &-transport
+    max-width: 680px
+    .text
+      margin-top: 20px
+      max-width: 570px
+    &__image
+      img
+        position: absolute
+        border-radius: 15px
+        object-fit: cover
+        object-position: center
+        width: 450px
+        height: 300px
+        &:nth-child(1)
+          top: 35px
+          right: 90px
+          transform: rotate(-2deg)
+        &:nth-child(2)
+          top: 215px
+          right: 175px
+          transform: rotate(2deg)
+          border: 4px solid #fff
+    ul
+      max-width: 360px
+      margin-top: 25px
+  &-eat
+    @include flexbox
+    align-items: flex-start
+    &__content
+      max-width: 570px
+      .text
+        margin-top: 20px
+      ul
+        margin-top: 30px
+        max-width: 500px
+    &__photos
+      width: calc(100% - 570px - 20px)
+      margin-left: auto
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      gap: 15px
+      img
+        object-fit: cover
+        object-position: center
+        width: 100%
+        aspect-ratio: 1 / 1
+        border-radius: 15px
+  &-residence
+    .text
+      margin-top: 20px
+    &__list
+      margin-top: 40px
+      @include flexbox
+      gap: 10px
+      margin-bottom: 30px
+      li
+        @include flexbox
+        align-items: center
+        justify-content: center
+        text-align: center
+        padding: 20px
+        border-radius: 15px
+        border: 1px solid #F2F2F2
+        font-weight: 500
+        line-height: 1.45
+        flex: 1
+        span
+          opacity: 0.45
+    &__item
+      background: #fafafa
+      border: 1px solid #F2F2F2
+      border-radius: 25px
+      padding: 25px 65px
+      @include flexbox
+      margin-top: 20px
+      &-content
+        padding: 40px 0
+        @include flexbox
+        flex-direction: column
+        align-items: flex-start
+        width: 430px
+        h4
+          font-size: 25px
+          font-weight: 600
+          line-height: 1.45
+          text-transform: uppercase
+          margin-bottom: 15px
+        h5
+          margin-top: auto
+          font-weight: 700
+          font-size: 16px
+          margin-bottom: 0
+          line-height: 1.45
+          position: relative
+          padding-left: 23px
+          &::before
+            content: ''
+            position: absolute
+            top: 8px
+            left: 0
+            width: 8px
+            height: 8px
+            border-radius: 100%
+            background: #5891d3
+        .rating
+          background: #fff
+          margin-top: 15px
+          padding: 10px 15px
+          border-radius: 8px
+          font-size: 18px
+          font-weight: 600
+          line-height: 1.45
+          @include flexbox
+          align-items: center
+          gap: 10px
+          &::before
+            content: ''
+            display: block
+            width: 16px
+            height: 16px
+            background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 1C4.6862 1 2 3.6862 2 7C2 8.6563 2.6711 10.156 3.7565 11.2417C4.8422 12.328 7.4 13.9 7.55 15.55C7.57249 15.7974 7.7516 16 8 16C8.2484 16 8.42751 15.7974 8.45 15.55C8.6 13.9 11.1578 12.328 12.2435 11.2417C13.3289 10.156 14 8.6563 14 7C14 3.6862 11.3138 1 8 1Z' fill='%23FF4433'/%3E%3Cpath d='M8.00002 9.10039C9.15982 9.10039 10.1 8.16018 10.1 7.00039C10.1 5.84059 9.15982 4.90039 8.00002 4.90039C6.84023 4.90039 5.90002 5.84059 5.90002 7.00039C5.90002 8.16018 6.84023 9.10039 8.00002 9.10039Z' fill='white'/%3E%3C/svg%3E%0A")
+      &-photos
+        width: calc(100% - 430px - 15px)
+        margin-left: auto
+        @include flexbox
+        align-items: flex-start
+        gap: 15px
+        img
+          width: calc((100% - 15px) / 2)
+          object-fit: cover
+          object-position: center
+          border-radius: 20px
+          aspect-ratio: 1 / 1
+    &__desc
+      text-align: center
+      margin-top: 30px
+      opacity: 0.45
+      font-size: 18px
+      font-weight: 500
+      line-height: 1.45
+  &-route
+    @include flexbox
+    align-items: flex-start
+    justify-content: space-between
+    gap: 40px
+    &__list
+      width: calc(100% / 2 - 20px)
+      max-width: 480px
+      font-size: 20px
+      line-height: 1.45
+      font-weight: 500
+      li
+        margin-top: 10px
+        position: relative
+        padding-left: 23px
+        &::before
+          content: ''
+          position: absolute
+          top: 8px
+          left: 0
+          width: 8px
+          height: 8px
+          border-radius: 100%
+          background: #5891d3
+        &:first-child
+          margin-top: 0
+    &__quote
+      padding: 20px 30px
+      border: 1px solid rgba(0,0,0,0.05)
+      border-radius: 10px
+      font-size: 18px
+      line-height: 1.45
+      font-weight: 500
+      width: 100%
+      b
+        font-weight: 600
+  &-add
+    &__grid
+      display: grid
+      grid-template-columns: repeat(4, 1fr)
+      gap: 16px
+      margin-top: 30px
+      img
+        border-radius: 15px

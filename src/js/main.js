@@ -216,4 +216,22 @@ document.addEventListener('DOMContentLoaded', function () {
       this.classList.add('active');
     });
   });
+
+  const price = document.querySelector('.price');
+  if (price) {
+    price.querySelectorAll('.price-accordion').forEach((item) => {
+      const title = item.querySelector('.price-accordion__title');
+      if (title) {
+        const content = item.querySelector('.price-accordion__wrapper');
+        title.addEventListener('click', () => {
+          const transition = content.scrollHeight / 1000 > 0.25 ? content.scrollHeight / 1000 : 0.25;
+          content.classList.toggle('open');
+          title.classList.toggle('open');
+          content.style.cssText = content.classList.contains('open')
+            ? `--transition: ${transition}s; max-height: ${content.scrollHeight}px;`
+            : null;
+        });
+      }
+    });
+  }
 });
