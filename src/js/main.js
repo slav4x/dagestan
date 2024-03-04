@@ -6,9 +6,15 @@ const viewportFix = (width) => {
   meta.setAttribute('content', `user-scalable=no, width=${screen.width <= width ? width : 'device-width'}`);
 };
 
-viewportFix(420);
+viewportFix(428);
+
+window.addEventListener('resize', function () {
+  document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+});
 
 document.addEventListener('DOMContentLoaded', function () {
+  document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+
   Fancybox.bind('[data-fancybox]', {
     dragToClose: false,
     autoFocus: false,
@@ -234,4 +240,14 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
+  const body = document.querySelector('body');
+  const burger = document.querySelector('.burger');
+  const burgerIcon = document.querySelector('.header-mobile__burger');
+  burgerIcon.addEventListener('click', () => {
+    burger.classList.toggle('show');
+    body.classList.toggle('no-scroll');
+    headerMobile.classList.toggle('burger-show');
+    burgerIcon.classList.toggle('open');
+  });
 });

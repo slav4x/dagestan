@@ -7,8 +7,10 @@ body
   font-weight: 400
   font-style: normal
   font-size: 16px
-  min-width: 420px
+  min-width: 428px
   color: var(--color-black)
+  &.no-scroll
+    overflow: hidden
 
 ul
   list-style: none
@@ -99,3 +101,48 @@ select.input
   line-height: 1.45
   span
     font-weight: 700
+
+.burger
+  position: fixed
+  height: var(--app-height)
+  top: 0
+  left: 0
+  right: 0
+  z-index: 900
+  background: #4b5662
+  color: #fff
+  padding-top: 100px
+  opacity: 0
+  pointer-events: none
+  transition: .4s
+  &-nav
+    width: calc(100% - 80px)
+    margin: 0 auto
+    font-size: 20px
+    line-height: 1.25
+    li
+      a
+        display: block
+        text-align: center
+        padding: 15px 0
+        border-bottom: 1px solid rgba(255,255,255,.1)
+      &:last-child a
+        border: none
+  &-phone
+    width: calc(100% - 80px)
+    margin: 25px auto 20px
+    display: block
+    text-align: center
+    font-size: 30px
+    font-weight: 600
+    i
+      font-style: normal
+      opacity: 0.15
+  .btn
+    width: calc(100% - 80px)
+    margin: 0 auto 20px
+    font-size: 15px
+    padding: 28px 0
+  &.show
+    opacity: 1
+    pointer-events: auto
