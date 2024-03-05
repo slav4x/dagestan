@@ -1,0 +1,135 @@
+.thanks
+  min-height: 880px
+  background: url(../img/thanks-bg.jpg) no-repeat top center / cover
+  color: #fff
+  margin-bottom: 25px
+  border-bottom-left-radius: var(--border-radius)
+  border-bottom-right-radius: var(--border-radius)
+  padding-top: 280px
+  padding-bottom: 55px
+  overflow: hidden
+  &-content
+    max-width: 615px
+    margin-left: auto
+    position: relative
+    h2
+      font-size: 55px
+      font-weight: 600
+      text-transform: uppercase
+      max-width: 500px
+    & > p
+      margin-top: 15px
+      font-size: 20px
+      font-weight: 500
+  &-books
+    position: absolute
+    top: -120px
+    left: -880px
+    max-width: initial
+    z-index: -1
+
+  &-manager
+    margin-top: 40px
+    background: #fff
+    padding: 25px 45px
+    border-radius: 8px
+    color: var(--color-black)
+    max-width: 550px
+    position: relative
+    img
+      position: absolute
+      width: 120px
+      bottom: -15px
+      right: -30px
+    p
+      font-size: 15px
+      font-weight: 500
+      opacity: 0.55
+      margin-top: 10px
+    a[href^="tel:"]
+      font-size: 45px
+      font-weight: 600
+      line-height: 1.45
+      span
+        opacity: 0.1
+    ul
+      margin-top: 20px
+      @include flexbox
+      align-items: flex-start
+      gap: 10px
+      li
+        a
+          @include flexbox
+          align-items: center
+          justify-content: center
+          gap: 10px
+          padding: 15px 25px
+          line-height: 22px
+          font-size: 18px
+          font-weight: 600
+          border-radius: 8px
+          color: #fff
+          box-shadow: inset 0px 4px 25px rgba(255, 255, 255, 0.25)
+          &::before
+            content: ''
+            display: block
+            background-repeat: no-repeat
+            background-position: center
+            width: 16px
+            height: 16px
+            filter: invert(1)
+          &.w
+            background: #90bc4f
+            &::before
+              background-image: url(../img/svg/w.svg)
+          &.t
+            background: #5891d3
+            &::before
+              background-image: url(../img/svg/t.svg)
+
+@media(max-width: 1920px)
+  .thanks
+    background-size: 1920px auto
+
+@media(max-width: 1600px)
+  .thanks
+    padding-top: 255px
+
+@media(max-width: 1024px)
+  .thanks
+    padding-top: 120px
+    height: 950px
+    padding-left: 15px
+    padding-right: 15px
+    &-content
+      max-width: 100%
+      h2
+        font-size: 28px
+        text-transform: none
+        font-weight: 500
+      & > p
+        font-size: 15px
+        &:first-of-type
+          font-weight: 600
+    &-manager
+      margin-top: 25px
+      padding: 25px 35px
+      a[href^="tel:"]
+        font-size: 26px
+      p
+        font-size: 14px
+        line-height: 1.45
+      ul
+        flex-direction: column
+        li
+          width: 100%
+      img
+        display: none
+    &-books
+      left: 50%
+      transform: translateX(-50%)
+      margin-left: -30px
+      top: 430px
+      width: 420px
+      z-index: 5
+      pointer-events: none

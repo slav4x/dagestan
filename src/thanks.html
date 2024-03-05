@@ -1,0 +1,26 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Мы приняли вашу заявку' %}
+
+{% block content %}
+
+<section class="thanks">
+  <div class="container">
+    <div class="thanks-content">
+      <img src="img/thanks-books.png" alt="" class="thanks-books">
+      <h2>Мы приняли вашу заявку</h2>
+      <p>Спасибо за проявленный интерес! Вы выбрали, пожалуй, самый лучший тур в коллоритный Дагестан.</p>
+      <p>С минуты на минуту отправим вам 2 файла PDF. Если у вас возник срочный вопрос, можете задать его прямо сейчас:</p>
+      <div class="thanks-manager">
+        <a href="tel:+7 (929) 728 44 44">+7 <span>(</span>929<span>)</span> 728 44 44</a>
+        <p>Мария – ваш личный помощник по туру в Дагестан</p>
+        <ul>
+          <li><a href="#" class="w">WhatsApp</a></li>
+          <li><a href="#" class="t">Telegram</a></li>
+        </ul>
+        <img src="img/thanks-manager.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
