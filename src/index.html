@@ -10,7 +10,13 @@
     <form action="#" class="promo-form">
       <input type="text" name="name" class="input" placeholder="Ваше имя" />
       <input type="tel" name="whatsapp" class="input masked" placeholder="Ваш WhatsApp" />
-      <input type="text" name="date" class="input" placeholder="Укажите даты тура" />
+      <select name="date" class="input" required>
+        <option value="" disabled selected>Укажите даты тура</option>
+        <option value="31 марта - 6 апреля">31 марта - 6 апреля</option>
+        <option value="7 апреля - 13 апреля">7 апреля - 13 апреля</option>
+        <option value="14 апреля - 20 апреля">14 апреля - 20 апреля</option>
+        <option value="21 апреля - 27 апреля">21 апреля - 27 апреля</option>
+      </select>
       <button class="btn btn-sm"><p>узнать о наличии свободных мест</p></button>
     </form>
     <div class="promo-manager">
@@ -901,15 +907,15 @@
       <form action="#" class="tour-form">
         <h3 class="tour-form__title">Бронируйте заранее!</h3>
         <h4 class="tour-form__subtitle">Свободные места на наши туры разлетаюстя как горячие пирожки, особенно на популярные даты</h4>
-        <select name="date" class="input">
-          <option disabled selected>Выберите дату тура</option>
+        <select name="date" class="input" required>
+          <option value="" disabled selected>Выберите дату тура</option>
           <option value="31 марта - 6 апреля">31 марта - 6 апреля</option>
           <option value="7 апреля - 13 апреля">7 апреля - 13 апреля</option>
           <option value="14 апреля - 20 апреля">14 апреля - 20 апреля</option>
           <option value="21 апреля - 27 апреля">21 апреля - 27 апреля</option>
         </select>
-        <select name="date" class="input">
-          <option disabled selected>Укажите количество людей</option>
+        <select name="date" class="input" required>
+          <option value="" disabled selected>Укажите количество людей</option>
           <option value="1">1 человек</option>
           <option value="2">2 человека</option>
           <option value="3">3 человека</option>
