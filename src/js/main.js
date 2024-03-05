@@ -244,10 +244,58 @@ document.addEventListener('DOMContentLoaded', function () {
   const body = document.querySelector('body');
   const burger = document.querySelector('.burger');
   const burgerIcon = document.querySelector('.header-mobile__burger');
+  const burgerNav = document.querySelectorAll('.burger-nav li a');
   burgerIcon.addEventListener('click', () => {
     burger.classList.toggle('show');
     body.classList.toggle('no-scroll');
     headerMobile.classList.toggle('burger-show');
     burgerIcon.classList.toggle('open');
+  });
+  burgerNav.forEach((item) => {
+    item.addEventListener('click', () => {
+      burger.classList.toggle('show');
+      body.classList.toggle('no-scroll');
+      headerMobile.classList.toggle('burger-show');
+      burgerIcon.classList.toggle('open');
+    });
+  });
+
+  document.querySelectorAll('.tour-form select[name="people"], .popup-payment select[name="people"]').forEach((selectElement) => {
+    const isPopup = selectElement.closest('.popup-payment');
+    const totalPriceElement = isPopup ? document.querySelector('.popup-total h4') : document.querySelector('.tour-form__total h4');
+    const totalTextElement = isPopup ? document.querySelector('.popup-total p') : document.querySelector('.tour-form__total p');
+
+    selectElement.addEventListener('change', function () {
+      const pricePerPerson = this.dataset.price;
+      const numberOfPeople = this.value;
+      const textPeople = numberOfPeople === '11' ? 'больше 10 человек' : getPeopleText(numberOfPeople);
+      const totalPrice = pricePerPerson * numberOfPeople;
+
+      totalTextElement.innerHTML = `Сумма предоплаты<br> за ${textPeople}`;
+      totalPriceElement.innerHTML = `${totalPrice.toLocaleString('ru-RU')}₽`;
+    });
+  });
+
+  function getPeopleText(n) {
+    if (n > 10) return 'человек';
+    const lastDigit = n % 10;
+    if (lastDigit === 1) return `${n} человека`;
+    if (lastDigit >= 2 && lastDigit <= 4) return `${n} человека`;
+    return `${n} человек`;
+  }
+
+  let previousScrollPosition = pageYOffset;
+  window.addEventListener('scroll', function () {
+    const currentScrollPosition = pageYOffset;
+
+    if (currentScrollPosition > previousScrollPosition && currentScrollPosition > 250) {
+      headerMobile.classList.add('hide');
+      header.classList.add('hide');
+    } else {
+      headerMobile.classList.remove('hide');
+      header.classList.remove('hide');
+    }
+
+    previousScrollPosition = currentScrollPosition;
   });
 });

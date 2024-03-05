@@ -32,8 +32,8 @@
         <h4>48.900р</h4>
         <p><b>Тур «Все включено и даже больше»</b><br> доступна рассрочка</p>
       </div>
-      <a href="#" class="promo-btn promo-btn__orange"><p>забронировать<br> с предоплатой</p></a>
-      <a href="#" class="promo-btn promo-btn__green"><p>оплатить тур<br> в рассрочку</p></a>
+      <a href="javascript:;" data-fancybox data-src="#popup-payment" class="promo-btn promo-btn__orange"><p>забронировать<br> с предоплатой</p></a>
+      <a href="javascript:;" data-fancybox data-src="#popup-credit" class="promo-btn promo-btn__green"><p>оплатить тур<br> в рассрочку</p></a>
       <a href="#" class="promo-btn promo-btn__white"><p>задать вопрос<br> в <i></i> whatsapp</p></a>
     </div>
     <div class="promo-tour">
@@ -41,7 +41,7 @@
       <h3 class="promo-tour__title">За 7 насыщенных дней покажем вам <span>самые яркие места дагестана</span></h3>
       <p>Поднимемся на <b>2000 метров на комфортном транспорте по горному серпантину, промчимся на бирюзовой реке на катере, сытно покушаем</b>, сладко поспим в уютных номерах высоко в горах и познакомимся с искренним гостеприимством дагестанского народа</p>
       <img src="img/promo-tour.png" alt="" class="promo-tour__photos">
-      <div class="btn-wrap"><a href="#" class="btn"><p>подобрать дату</p></a></div>
+      <div class="btn-wrap"><a href="javascript:;" data-fancybox data-src="#popup-reserv" class="btn"><p>подобрать дату</p></a></div>
     </div>
   </div>
 </section>
@@ -184,7 +184,7 @@
   </div>
 </section>
 
-<section class="programm">
+<section class="programm" id="programm">
   <div class="container">
     <h2 class="title"><span>Посетим все самые захватывающие места</span> Дагестана и не только...</h2>
     <h3 class="subtitle">Представьте себе, что вы отправляетесь <span>в незабываемое путешествие</span>, где каждый момент наполнен приключениями и невероятными эмоциями</h3>
@@ -654,7 +654,7 @@
   </div>
 </section>
 
-<section class="price">
+<section class="price" id="price">
   <div class="container">
     <h2 class="title"><span>Что входит в стоимость?</span></h2>
     <div class="price-accordion">
@@ -840,13 +840,13 @@
       <div class="price-credit__content">
         <h3>Можно оплатить частями</h3>
         <p>Оформи рассрочку на 6 месяцев, собирай чемодан и лети навстречу новым приключениям</p>
-        <a href="#" class="btn"><p>Отправить заявку на рассрочку</p></a>
+        <a href="javascript:;" data-fancybox data-src="#popup-credit" class="btn"><p>Отправить заявку на рассрочку</p></a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="tour">
+<section class="tour" id="tour">
   <div class="container">
     <h2 class="title"><span>Даты туров на 2024 год</span></h2>
     <div class="tour-row">
@@ -914,18 +914,25 @@
           <option value="14 апреля - 20 апреля">14 апреля - 20 апреля</option>
           <option value="21 апреля - 27 апреля">21 апреля - 27 апреля</option>
         </select>
-        <select name="date" class="input" required>
+        <select name="people" class="input" required data-price="5000">
           <option value="" disabled selected>Укажите количество людей</option>
           <option value="1">1 человек</option>
           <option value="2">2 человека</option>
           <option value="3">3 человека</option>
           <option value="4">4 человека</option>
+          <option value="5">5 человек</option>
+          <option value="6">6 человек</option>
+          <option value="7">7 человек</option>
+          <option value="8">8 человек</option>
+          <option value="9">9 человек</option>
+          <option value="10">10 человек</option>
+          <option value="11">Больше 10 человек</option>
         </select>
         <input type="text" name="name" class="input" placeholder="Введите свое имя" />
         <input type="tel" name="phone" class="input masked" placeholder="Введите номер телефона" />
         <div class="tour-form__total">
-          <p>Сумма предоплаты<br> за 2 человека</p>
-          <h4>10 000₽</h4>
+          <p>Сумма предоплаты<br> за 1 человека</p>
+          <h4>5 000₽</h4>
         </div>
         <button class="btn"><p>оплатить бронь</p></button>
       </form>
@@ -957,7 +964,7 @@
   </div>
 </section>
 
-<section class="reviews">
+<section class="reviews" id="reviews">
   <div class="container">
     <h2 class="title"><span>Горящие глаза наших туристов<br>– лучшая награда</span></h2>
     <h3 class="subtitle">Посмотрите видео-отзывы и <span>узнайте всю правду</span> о нашем экслюзивном туре в Дагестан</h3>

@@ -8,7 +8,7 @@
   margin: 0 auto
   color: #fff
   z-index: 100
-  transition: .25s
+  transition: all .25s, transform .4s
   &.fixed, &.burger-show
     position: fixed
     top: 20px
@@ -18,6 +18,8 @@
       display: none
     .header-contact__call
       border-color: var(--color-black)
+  &.hide
+    transform: translateY(calc(-100% - 20px))
   &::before
     content: ''
     position: absolute

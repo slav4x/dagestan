@@ -33,6 +33,9 @@
         border: 1px solid #fff
         box-shadow: 40px 40px 65px rgba(0, 0, 0, 0.12)
         padding: 7px 20px
+      &.hide
+        transform: translateY(calc(-100% - 20px))
+        box-shadow: none
       &__burger
         width: 52px
         height: 52px
@@ -661,7 +664,7 @@
           display: none
 
   .tour
-    padding: 0 15px
+    padding: 40px 15px 0
     .title
       max-width: 200px
       text-align: left
@@ -950,7 +953,7 @@
     margin: 0
 
   .price
-    padding: 40px 15px
+    padding: 40px 15px 0px
     .title
       text-align: left
       margin-bottom: 25px
