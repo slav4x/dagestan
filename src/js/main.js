@@ -241,23 +241,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  const body = document.querySelector('body');
-  const burger = document.querySelector('.burger');
-  const burgerIcon = document.querySelector('.header-mobile__burger');
-  const burgerNav = document.querySelectorAll('.burger-nav li a');
-  burgerIcon.addEventListener('click', () => {
-    burger.classList.toggle('show');
-    body.classList.toggle('no-scroll');
-    headerMobile.classList.toggle('burger-show');
-    burgerIcon.classList.toggle('open');
-  });
-  burgerNav.forEach((item) => {
-    item.addEventListener('click', () => {
-      burger.classList.toggle('show');
-      body.classList.toggle('no-scroll');
-      headerMobile.classList.toggle('burger-show');
-      burgerIcon.classList.toggle('open');
-    });
+  document.querySelector('body').addEventListener('click', (e) => {
+    const isBurgerIcon = e.target.closest('.header-mobile__burger');
+    const isBurgerNavItem = e.target.closest('.burger-nav li a');
+    if (isBurgerIcon || isBurgerNavItem) {
+      document.querySelector('.burger').classList.toggle('show');
+      document.querySelector('body').classList.toggle('no-scroll');
+      document.querySelector('.header-mobile').classList.toggle('burger-show');
+      document.querySelector('.header-mobile__burger').classList.toggle('open');
+    }
   });
 
   document.querySelectorAll('.tour-form select[name="people"], .popup-payment select[name="people"]').forEach((selectElement) => {
